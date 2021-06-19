@@ -1,0 +1,63 @@
+title: mohmentary!
+email: mohmentary1@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: http://mohmentary.com # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: _mohmentary
+github_username:  mohmentary
+image_url: /assets/images/mohmentary.jpg
+
+# Copyright
+copyright_date: 2000-01-01
+copyright_holder: Joseph Choe
+
+# Build settings
+source: _app
+destination: _site
+# theme: minima
+plugins:
+#   - jekyll-feed
+  - jekyll-last-modified-at
+include:
+  - _pages
+
+defaults:
+  - scope:
+      path: "_pages/index.html"
+    values:
+      is_index: true
+  - scope:
+      path: "_pages"
+    values:
+      permalink: /:basename
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      permalink: :year/:month/:day/:title
+      category: log
+  - scope:
+      path: "_posts/essay"
+      type: posts
+    values:
+      layout: essay
+      permalink: /:title
+      category: essay
+  - scope:
+      path: "_posts/podcast"
+      type: posts
+    values:
+      layout: podcast
+      permalink: /:episode
+      category: podcast
+  - scope:
+      path: "_posts/conversations"
+      type: posts
+    values:
+      layout: podcast
+      permalink: conversations/:episode
+      category: podcast
